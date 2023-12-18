@@ -1,28 +1,18 @@
-'use client'
-import { useState } from 'react';
+import { Counter } from '@/app/ui-functions'
+
+export const metadata = {
+    title: 'Counter',
+    description: 'this is a counter'
+}
 
 export default function CounterPage () {
-
-    const [count, setCount] = useState(0);
-
+    // se pueden tener las peticiones a DB
+    // siempre y cuando no se usen hooks
+    // ya que esto es un sever component
+    // y se renderiza una sola vez
     return (
         <div className='flex flex-col justify-center items-center w-full'>
-            <span className='text-9xl'>{count}</span>
-            <div className='flex'>
-                <button
-                    className='flex items-center justify-center rounded-md bg-gray-900 text-white hover:bg-gray-600 disabled:bg-gray-300 p-1 m-2 w-9'
-                    onClick={() => setCount(count-1)}
-                    disabled={count === 0}
-               >
-                    -
-                </button>
-                <button
-                    className='flex items-center justify-center rounded-md bg-gray-900 text-white hover:bg-gray-600 p-1 m-2 w-9'
-                    onClick={() => setCount(count+1)}
-                >
-                    +
-                </button>
-            </div>
+            <Counter value={0} />
         </div>
     )
 }
