@@ -1,19 +1,25 @@
 import Image from 'next/image'
-import { IoCalculatorOutline, IoHomeOutline, IoLogoReact } from 'react-icons/io5';
+import { IoBugOutline, IoCalculatorOutline, IoHomeOutline, IoLogoReact } from 'react-icons/io5';
 import { ItemsSideBar } from './items';
 
 const itemsMenu = [
     {
         route: '/dashboard/home',
-        icon: <IoHomeOutline />,
+        icon: <IoHomeOutline size={20} />,
         title: 'Home',
         subtitle: 'visualize statics'
     },
     {
         route: '/dashboard/counter',
-        icon: <IoCalculatorOutline />,
+        icon: <IoCalculatorOutline size={20} />,
         title: 'Counter',
         subtitle: 'calculator'
+    },
+    {
+        route: '/dashboard/pokemons',
+        icon: <IoBugOutline size={20} />,
+        title: 'Pokemons',
+        subtitle: 'view pokemons'
     },
 ]
 
