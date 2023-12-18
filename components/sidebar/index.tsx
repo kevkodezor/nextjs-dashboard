@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { IoCalculatorOutline, IoHomeOutline, IoLogoReact } from 'react-icons/io5';
 import { ItemsSideBar } from './items';
-import { title } from 'process';
 
 const itemsMenu = [
     {

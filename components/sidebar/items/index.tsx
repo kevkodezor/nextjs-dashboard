@@ -14,11 +14,7 @@ export const ItemsSideBar = ({ route, icon, title, subtitle }: Props) => {
   return (
     <Link
       href={route}
-      className={
-        path === route
-          ? 'w-full px-2 inline-flex space-x-2 items-center border-b border-slate-700 py-3 rounded-md bg-blue-800 hover:bg-white/5 transition ease-linear duration-150'
-          : 'w-full px-2 inline-flex space-x-2 items-center border-b border-slate-700 py-3 rounded-md hover:bg-white/5 transition ease-linear duration-150'
-      }
+      className={`w-full px-2 inline-flex space-x-2 items-center border-b border-slate-700 py-3 rounded-md ${(path !== route ? '' : 'bg-blue-800')} hover:bg-white/5 transition ease-linear duration-150`}
     >
       <div>
         {icon}
