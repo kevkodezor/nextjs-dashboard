@@ -1,7 +1,7 @@
 import { Counter } from '@/app/ui-functions'
 
 export const metadata = {
-    title: 'Counter',
+    title: 'Dashboard | Counter',
     description: 'this is a counter'
 }
 

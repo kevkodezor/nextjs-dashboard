@@ -1,6 +1,10 @@
 import { PokemonsList } from '@/app/list';
 import { Pokemons, SimplePokemon } from '@/app/interfaces';
 
+export const metadata = {
+    title: 'Dashboard | Pokemon list',
+}
+
 const getPokemons = async (limit = 56, offset = 0):Promise<SimplePokemon[]> => {
     const data:Pokemons = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`)
     .then(res => res.json());

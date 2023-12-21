@@ -32,7 +32,7 @@ export const SideBar = () => {
     >
           <div id='logo' className='my-4 px-6'>
               <h1 className='text-lg md:text-2xl font-bold text-white'>
-                <span className='flex items-center justify-center text-blue-500'>
+                <span className='flex items-center justify-center text-blue-400'>
                     <IoLogoReact className='mr-2' /> Dashboard
                 </span>
                 </h1>
