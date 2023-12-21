@@ -15,7 +15,7 @@ export const Card = ({ pokemon }: Props) => {
                     <Image
                         key={pokemon.id}
                         alt={pokemon.name}
-                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${pokemon.id}.png`}
+                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
                         width={100}
                         height={100}
                         priority={false}
