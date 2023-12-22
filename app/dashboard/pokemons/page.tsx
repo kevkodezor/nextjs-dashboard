@@ -2,7 +2,6 @@ import { PokemonsList } from '@/app/list';
 import { Pokemons, SimplePokemon } from '@/app/interfaces';
 import { Silkscreen } from 'next/font/google'
 
-
 const silkscreen = Silkscreen({ subsets: ['latin'], weight: ['400'] }) 
 
 export const metadata = {
