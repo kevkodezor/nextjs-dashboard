@@ -8,6 +8,11 @@ interface Props {
   params: { id: string };
 }
 
+export async function generateStaticParams() {
+  const staticPoke = Array({ length: 150 }).map((v, i) => `${i + 1}`);
+  return staticPoke.map(id => id);
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { name } = await getPokemonById(params.id);
   return {
@@ -19,7 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const getPokemonById = async (id: string): Promise<Pokemon> => {
   try {
     const poke = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
-      cache: 'force-cache', // change future
+      // cache: 'force-cache', // change future
+      next: { revalidate: 60 * 60 * 30 * 6 }
     }).then(res => res.json());
     return poke;
   } catch (error) {
@@ -44,14 +50,6 @@ export default async function PokemonPage({ params }: Props) {
               alt={`Imagen del pokemon ${pokemon.name}`}
               className="mb-5"
             />
-
-            {/* <div className="flex flex-wrap">
-              {pokemon.moves.length}
-              {pokemon.moves.map(move => (
-                  <p key={move.move.name} className="mr-2 capitalize">{move.move.name}</p>
-                ))
-              }
-            </div> */}
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4 px-2 w-full">
