@@ -1,5 +1,9 @@
 import { PokemonsList } from '@/app/list';
 import { Pokemons, SimplePokemon } from '@/app/interfaces';
+import { Silkscreen } from 'next/font/google'
+
+
+const silkscreen = Silkscreen({ subsets: ['latin'], weight: ['400'] }) 
 
 export const metadata = {
     title: 'Dashboard | Pokemon list',
@@ -21,7 +25,7 @@ export default async function PokemonsPage () {
     
     return (
         <div className='flex flex-col w-full'>
-            <span className='text-center text-5xl m-5'>Pokemons List</span>
+            <span className={`text-center text-5xl m-5 ${silkscreen.className}`}>Pokemons List</span>
             <PokemonsList data={pokemons} />
         </div>
     );
