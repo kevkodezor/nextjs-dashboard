@@ -9,10 +9,11 @@ export default function HomePage() {
                 <SimpleWidget />
             </div>
             <div className='border-solid h-80'>
+                <h2 className='text-3xl font-bold'>Lists</h2>
                 <Link href='/dashboard/favorites'>
                     <button
                         type='button'
-                        className='bg-gray-900 p-5 rounded-md font-bold hover:bg-gray-700 text-white'
+                        className='bg-gray-900 p-5 rounded-md font-bold hover:bg-gray-700 text-white mt-5'
                     >
                         Favorites pokemons
                     </button>
