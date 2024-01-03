@@ -8,14 +8,28 @@ interface Props {
     value?: number;
 }
 
+export interface ResCounter {
+    method: string;
+    count: number;
+}
+
+const getCounter = async ():Promise<ResCounter> => {
+    const data = await fetch('/api/counter').then(res => res.json());
+    return data;
+}
+
 export const Counter = ({ value = 5 }: Props) => {
 
     const count = useAppSelector(state => state.counter.count);
     const setCount = useAppDispatch();
 
+    // useEffect(() => {
+    //     setCount(initCounter(value));
+    // }, [setCount, value]);
+
     useEffect(() => {
-        setCount(initCounter(value));
-    }, [setCount, value]);
+        getCounter().then(({ count }) => setCount(initCounter(count)));
+    }, [setCount]);
 
     return (
         <>
