@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { SimpleWidget } from '@/app/components';
+import { Grid } from '@/app/components';
 
 export default function HomePage() {
     return (
         <div className='flex flex-col w-full p-5'>
             <div className='border-solid h-80'>
                 <h1 className='font-bold text-5xl'>General info</h1>
-                <SimpleWidget />
+                <Grid />
             </div>
             <div className='border-solid h-80'>
                 <h2 className='text-3xl font-bold'>Lists</h2>

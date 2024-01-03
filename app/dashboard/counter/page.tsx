@@ -12,6 +12,7 @@ export default function CounterPage () {
     // y se renderiza una sola vez
     return (
         <div className='flex flex-col justify-center items-center w-full'>
+            <text className='text-2xl'>This value you can see in home page</text>
             <Counter value={0} />
         </div>
     )
