@@ -1,12 +1,21 @@
 'use client'
+import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '@/store';
-import { downCount, resetCount, upCount } from '@/store/counter/slice';
+import { downCount, initCounter, resetCount, upCount } from '@/store/counter/slice';
 import { capitalize } from '@/utils';
 
-export const Counter = () => {
+interface Props {
+    value?: number;
+}
+
+export const Counter = ({ value = 5 }: Props) => {
 
     const count = useAppSelector(state => state.counter.count);
     const setCount = useAppDispatch();
+
+    useEffect(() => {
+        setCount(initCounter(value));
+    }, [setCount, value]);
 
     return (
         <>
