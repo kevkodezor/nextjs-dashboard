@@ -12,9 +12,22 @@ const initialState: PokemonState = {
 const pokemonsReducer = createSlice({
     name: 'favorites pokemons',
     initialState,
-    reducers: { }
+    reducers: {
+        addFavorite(state, action: PayloadAction<SimplePokemon>) {
+            
+            const poke = action.payload;
+            const { id } = poke;
+
+            if (!!state[id]) {
+                delete state[id];
+                return;
+            }
+
+            state[id] = poke;
+        }
+    }
 });
 
-export const { } = pokemonsReducer.actions
+export const { addFavorite } = pokemonsReducer.actions
 
 export default pokemonsReducer.reducer
