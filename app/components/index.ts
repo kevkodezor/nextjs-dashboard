@@ -1,4 +1,5 @@
 export * from './card'
 export * from './grid'
+export * from './grid-pokemon'
 export * from './sidebar'
 export * from './simple-widget'
